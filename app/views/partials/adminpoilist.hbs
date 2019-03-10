@@ -1,0 +1,41 @@
+<section class="ui raised segment">
+    <div class="ui grid">
+        <aside class="six wide column">
+            <img src="images/poi.png" class="ui medium image">
+            <a href ="addNew" button class="fluid ui button black">Add a Place of Interest in Rosslare</abutton> </a>
+        </aside>
+        <article class="eight wide column">
+            <table class="ui selectable celled inverted table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>catagory</th>
+                    <th>Image  ss         </th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {{#each pois}}
+                    <tr>
+                        <td> {{name}} </td>
+                        <td> {{description}} </td>
+                        <td> {{catagory}} </td>
+                        <td> {{image}} </td>
+                        <td>
+                        <a href ="/viewPoiAdmin/{{_id}}" button class="ui blue submit button inverted black">View</abutton> </a>
+                        </td>
+                        <td>
+                        <a href ="/updatePoi/{{_id}}" button class="ui blue submit button inverted black">Edit</abutton> </a>
+                        </td>
+                        <td>
+                        <a href ="/deletePoi/{{_id}}" button class="ui blue submit button inverted black">Delete</abutton> </a>
+                        </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </article>
+    </div>
+</section>
+</section>

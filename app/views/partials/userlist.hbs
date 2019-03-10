@@ -1,0 +1,35 @@
+<section class="ui raised segment">
+    <div class="ui grid">
+        <aside class="six wide column">
+            <img src="images/users.jpg" class="ui medium image">
+        </aside>
+        <article class="eight wide column">
+            <table class="ui selectable celled inverted table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Surname</th>
+                    <th>Email</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each user}}
+                    <tr>
+                        <td> {{firstName}} </td>
+                        <td> {{lastName}} </td>
+                        <td> {{email}} </td>
+                        <td>
+                        <td>
+                            <a href ="/viewUser/{{_id}}" button class="ui blue submit button inverted black">View</abutton> </a>
+                        </td>
+                        <td>
+                            <a href ="/deleteUser/{{_id}}" button class="ui blue submit button inverted black">Delete</abutton> </a>
+                        </td>
+                        </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </article>
+    </div>
+</section>

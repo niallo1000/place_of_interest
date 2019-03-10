@@ -1,0 +1,36 @@
+<section class="ui raised segment">
+    <div class="ui grid">
+        <div class="ui ten wide column">
+            <div class="ui stacked fluid form segment">
+                <form action="/poi" method="POST">
+                    <h3 class="ui header">Register</h3>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Name</label>
+                            <input placeholder="Name" type="text" name="name">
+                        </div>
+                        <div class="field">
+                            <label>Description</label>
+                            <input placeholder="Description" type="text" name="description">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>image</label>
+                        <input placeholder="image" type="text" name="image">
+                    </div>
+                    <div class="field">
+                        <label>Catagory</label>
+                        <input type="Catagory" name="catagory">
+                    </div>
+                    <div class="field">
+                        <label>Location</label>
+                        <input type="Location" name="location">
+                    </div>
+                    <button class="ui blue submit button">Submit</button>
+                </form>
+                {{> error }}
+            </div>
+        </div>
+    </div>
+    </div>
+</section>

@@ -1,0 +1,62 @@
+{{> mainmenuadmin _id="places" }}
+
+<section class="ui raised segment">
+    <div class="ui grid">
+
+        <div class="ui ten wide column">
+            <div class="ui stacked fluid form segment">
+                <form action="/reports" method="GET">
+                    <h3 class="ui header">Add Place of Interest</h3>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Name</label>
+                            {{poi.name}}
+                        </div>
+                        <div class="field">
+                            <label>Image</label>
+                            {{poi.image}}
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Description</label>
+                        {{poi.description}}
+                    </div>
+                    <div class="field">
+                        <label>Catagory</label>
+                        {{poi.catagory}}
+                    </div>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Location</label>
+                         {{poi.location}}
+                    </div>
+                        <div class="field">
+                            <label>Location</label>
+                            {{poi.comment}}
+                        </div>
+                    </div>
+                    <div><button class="ui blue submit button">Back</button></div>
+                </form>
+                {{> error }}
+            </div>
+        </div>
+    </div>
+    </div>
+    <aside class="ui five wide column">
+        <article class="two wide column">
+            <table class="ui selectable celled fixed inverted table">
+                <thead>
+                <th>Comments</th>
+                </thead>
+                <tbody>
+                <tr>
+                    <td> {{comment.comment}} </td>
+                    <td>
+                </tr>
+                </tbody>
+            </table>
+        </article>
+    </aside>
+
+
+</section>

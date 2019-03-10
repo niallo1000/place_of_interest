@@ -1,0 +1,38 @@
+<section class="ui raised segment">
+    <div class="ui grid">
+        <aside class="six wide column">
+            <img src="images/homer5.jpg" class="ui medium image">
+        </aside>
+        <article class="eight wide column">
+            <table class="ui celled table segment">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Catagory</th>
+                    <th>Location</th>
+                    <th>User</th>
+                    <th>ID</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each pois}}
+                    <tr>
+                        <td> {{name}} </td>
+                        <td> {{description}} </td>
+                        <td> {{catagory}} </td>
+                        <td> {{location}} </td>
+                        <td> {{poi.firstName}} {{poi.lastName}} </td>
+                        <td> {{poi.id}} </td>
+                        <td>
+                        <div>
+                            <button class="ui blue submit button">Delete</button>
+                        </div>
+                        </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </article>
+    </div>
+</section>

@@ -1,0 +1,36 @@
+<section class="ui raised segment">
+    <div class="ui grid">
+        <aside class="six wide column">
+            <img src="images/poi.png" class="ui medium image">
+            <a href ="addNew" button class="fluid ui button black">Add a Place of Interest in Rosslare</abutton> </a>
+        </aside>
+        <article class="eight wide column">
+            <table class="ui selectable celled fixed inverted table">
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>catagory</th>
+                    <th>Image           </th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {{#each pois}}
+                    <tr>
+                        <td> {{name}} </td>
+                        <td> {{description}} </td>
+                        <td> {{catagory}} </td>
+                        <td> {{image}} </td>
+                        <td>
+                        <div>
+                            <a href ="/viewPoi/{{_id}}" button class="ui blue submit button inverted black">View</abutton> </a>
+                        </div>
+                        </td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+        </article>
+    </div>
+</section>

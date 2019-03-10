@@ -1,0 +1,49 @@
+<section class="ui raised segment">
+    <div class="ui grid">
+        <aside class="ui five wide column">
+            <img src="images/signup.jpg" class="ui medium image">
+        </aside>
+        <div class="ui ten wide column">
+            <div class="ui stacked fluid form segment">
+                <form action="/poi2" method="POST">
+                    <h3 class="ui header">Add Place of Interest</h3>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>Name</label>
+                            <input placeholder="Name" type="text" name="name">
+                        </div>
+                        <div class="field">
+                            <label>Add Image</label>
+                            <input placeholder="image" type="text" name="image">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Description</label>
+                        <input placeholder="description" type="text" name="description">
+                    </div>
+                    <div class="ui selection dropdown">
+                        <input type="hidden" name="catagory">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Catagory</div>
+                        <div class="menu">
+                            <div class="item" data-value="Sport & Recreation">Sport & Recreation</div>
+                            <div class="item" data-value="Dining">Dining</div>
+                            <div class="item" data-value="Drinks">Drinks</div>
+                            <div class="item" data-value="Birdwatching">Birdwatching</div>
+                            <div class="item" data-value="Walking">Walking</div>
+                            <div class="item" data-value="Shopping">Shopping</div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Location</label>
+                        <input type="Location" name="location">
+                    </div>
+                    <button class="ui blue submit button">Add POI</button>
+                    <a href ="places" button class="ui blue submit button">Back</abutton> </a>
+                </form>
+                {{> error }}
+            </div>
+        </div>
+    </div>
+    </div>
+</section>

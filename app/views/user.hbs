@@ -1,0 +1,30 @@
+{{> mainmenuadmin _id="settings" }}
+
+<section class="ui raised segment">
+    <div class="ui grid">
+        <div class="ui ten wide column">
+            <div class="ui stacked fluid form segment">
+                <form action="/reports" method="GET">
+                    <h3 class="ui header">Update Account Details</h3>
+                    <div class="two fields">
+                        <div class="field">
+                            <label>First Name</label>
+                            {{user.firstName}}
+                        </div>
+                        <div class="field">
+                            <label>Last Name</label>
+                            {{user.lastName}}
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Email</label>
+                        {{user.email}}
+                    </div>
+                    <div><button class="ui blue submit button">Back</button></div>
+                </form>
+                {{> error }}
+            </div>
+            </div>
+        </div>
+    </div>
+</section>

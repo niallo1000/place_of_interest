@@ -1,0 +1,101 @@
+{
+  "users": {
+    "_model": "User",
+    "homer": {
+      "firstName": "Niall",
+      "lastName": "O'Neill",
+      "email": "n@nn.com",
+      "password": "nnnn"
+    },
+    "marge": {
+      "firstName": "Marge",
+      "lastName": "Simpson",
+      "email": "marge@simpson.com",
+      "password": "secret"
+    },
+    "bart": {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "secret"
+    }
+  },
+
+  "comments": {
+    "_model": "Comment",
+    "one": {
+      "text": "This place is good, but I wish there was internet",
+      "author": "->users.homer"
+    },
+    "two": {
+      "text": "This place is reallly good, but I wish there was internet",
+      "author": "->users.marge"
+    },
+    "three": {
+      "text": "This place is really really good, but I wish there was internet",
+      "author": "->users.bart"
+    }
+  },
+
+
+  "places": {
+    "_model": "Poi",
+    "one": {
+      "name": "Hook Head",
+      "description": "Island",
+      "image": "Pic Here",
+      "catagory": "Wexford",
+      "location": "Wexffgdord",
+      "comment": "->comments.one",
+      "user": "->users.homer"
+    },
+    "two": {
+      "name": "Hook Head",
+      "description": "Island",
+      "image": "Pic Here",
+      "catagory": "Wexford",
+      "location": "Wexffgdord",
+      "comment": "->comments.one",
+      "user": "->users.homer"
+    },
+    "three": {
+      "name": "Hook Head",
+      "description": "Island",
+      "image": "Pic Here",
+      "catagory": "Wexford",
+      "location": "Wexffgdord",
+      "comment": "->comments.one",
+      "user": "->users.homer"
+    },
+    "four": {
+      "name": "Hook Head",
+      "description": "Island",
+      "image": "Pic Here",
+      "catagory": "Wexford",
+      "location": "Wexffgdord",
+      "comment": "->comments.one",
+      "user": "->users.homer"
+    },
+    "five": {
+      "name": "WExico",
+      "description": "Island",
+      "image": "Pic Here",
+      "catagory": "Wexford",
+      "location": "Wexffgdord",
+      "comment": "->comments.one",
+      "addedBy": "->users.homer"
+    }
+  },
+
+
+
+
+
+  "admin": {
+    "_model": "Admin",
+    "one": {
+      "adminEmail": "admin@admin.com",
+      "adminPassword": "admin"
+    }
+  }
+}
