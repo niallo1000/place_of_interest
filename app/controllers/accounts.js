@@ -3,6 +3,10 @@ const Boom = require('boom');
 const User = require('../models/user');
 const Admin = require('../models/admin');
 const Joi = require('joi');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
+
 
 const Accounts = {
     index: {
@@ -49,11 +53,14 @@ const Accounts = {
                     const message = 'Email address is already registered';
                     throw new Boom(message);
                 }
+
+                const hash = await bcrypt.hash(payload.password, saltRounds);     // ADDED
+
                 const newUser = new User({
                     firstName: payload.firstName,
                     lastName: payload.lastName,
                     email: payload.email,
-                    password: payload.password
+                    password: hash                                           // EDITED
                 });
                 user = await newUser.save();
                 request.cookieAuth.set({ id: user.id });
@@ -104,9 +111,13 @@ const Accounts = {
                     const message = 'Email address is not registered';
                     throw new Boom(message);
                 }
-                user.comparePassword(password);
-                request.cookieAuth.set({ id: user.id });
-                return h.redirect('/places');
+                if (!await user.comparePassword(password)) {         // EDITED (next few lines)
+                    const message = 'Password mismatch';
+                    throw new Boom(message);
+                } else {
+                    request.cookieAuth.set({ id: user.id });
+                    return h.redirect('/places');
+                }
             } catch (err) {
                 return h.view('login', { errors: [{ message: err.message }] });
             }
@@ -142,7 +153,7 @@ const Accounts = {
             try {
                 const id = request.params.id;
                 const users = await User.findById(id);
-                 await users.delete();
+                await users.delete();
                 const user = await User.find().populate('user');
                 const pois = await POI.find().populate('poi');
 
@@ -190,7 +201,7 @@ const Accounts = {
                 user.firstName = userEdit.firstName;
                 user.lastName = userEdit.lastName;
                 user.email = userEdit.email;
-                user.password = userEdit.password;
+                user.password = userEdit.password;           // EXERCISE -- change this to use bcrypt
                 await user.save();
                 return h.redirect('/settings');
             } catch (err) {
